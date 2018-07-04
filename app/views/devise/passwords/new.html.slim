@@ -1,0 +1,11 @@
+.form-signin
+  h2.text-center
+    | Forgot your password?
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.input :email, required: true, autofocus: true
+    .form-actions
+      = f.button :submit, "Send me reset password instructions"
+  p.mt-5.mb-3.text-muted.text-center
+    = render "devise/shared/links"
