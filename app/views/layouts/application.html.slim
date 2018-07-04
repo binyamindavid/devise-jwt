@@ -8,5 +8,19 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
   body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      .container
+        = link_to 'Devise JWT', root_path, class: 'navbar-brand'
+        button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"]
+          span.navbar-toggler-icon
+        #navbarNavAltMarkup.collapse.navbar-collapse
+          .navbar-nav
+            = link_to 'Secret', home_secret_path, class: 'nav-item nav-link'
+            - if user_signed_in?
+              = link_to 'Your Account', edit_user_registration_path, class: 'nav-item nav-link'
+              = link_to 'Sign Out', destroy_user_session_path, method: 'delete', class: 'nav-item nav-link'
+            - else
+              = link_to 'Sign In', new_user_session_path, class: 'nav-item nav-link'
+              = link_to 'Sign up', new_user_registration_path, class: 'nav-item nav-link'
     .container
       = yield
