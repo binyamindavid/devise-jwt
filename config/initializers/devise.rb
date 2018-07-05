@@ -14,7 +14,7 @@ Devise.setup do |config|
     jwt.secret = 'c3fa5b2708d7619aaa7d496101cbe7148620b2c649a8104f8d2347f54d9d6a2ab1dfac9b4270850eba244c36df1584e6c7e600678673fd3a1cfb297cd71ca720'
 
     #jwt.dispatch_requests = [ ['GET', %r{^/dispatch_path_2$}] ]
-    jwt.dispatch_requests = [ ['POST', %r{^api/sessions$}] ]
+    jwt.dispatch_requests = [ ['POST', %r{^api/users/sign_in$}] ]
   end
 
   # ==> Controller configuration
