@@ -56,6 +56,9 @@ gem 'devise'
 gem 'bootstrap', '~> 4.1.1'
 gem 'slim-rails'
 gem 'simple_form'
+gem 'devise-jwt', '~> 0.5.7'
+gem 'rack-cors'
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
