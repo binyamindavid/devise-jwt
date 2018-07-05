@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     devise_for :users, controllers: {sessions: 'api/sessions'}
     devise_scope :user do
-      get 'users/current', to: 'sessions#show'
+      post '/authentication_tokens/create', to: "authentication_tokens#create"
     end
   end
-
 end
